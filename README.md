@@ -1,2 +1,2 @@
 # FourPong
-Local network/VPN Multiplayer Pong game
+ Local network/VPN Multiplayer Pong game
