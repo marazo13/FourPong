@@ -491,7 +491,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139392049}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &177346669
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 568958313}
   - component: {fileID: 568958312}
   - component: {fileID: 568958314}
+  - component: {fileID: 568958315}
   m_Layer: 0
   m_Name: Player3Goal
   m_TagString: Untagged
@@ -798,6 +799,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &568958315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568958311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686b7b149d1dd1419a94e5c9a506df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorer: 0
+  scored: 3
 --- !u!1 &686293855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1199,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793792976}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &856153524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1364,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!61 &1091696713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1388,7 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac20e870ad9556f44ba721767b9a88e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   rb: {fileID: 1091696712}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1092665625
@@ -1813,6 +1828,7 @@ GameObject:
   - component: {fileID: 1417932108}
   - component: {fileID: 1417932107}
   - component: {fileID: 1417932109}
+  - component: {fileID: 1417932110}
   m_Layer: 0
   m_Name: Player2Goal
   m_TagString: Untagged
@@ -1913,6 +1929,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1417932110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417932106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686b7b149d1dd1419a94e5c9a506df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorer: 0
+  scored: 2
 --- !u!1 &1533802528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2227,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570323945}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &1625356472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2239,7 @@ GameObject:
   - component: {fileID: 1625356474}
   - component: {fileID: 1625356473}
   - component: {fileID: 1625356475}
+  - component: {fileID: 1625356476}
   m_Layer: 0
   m_Name: Player4Goal
   m_TagString: Untagged
@@ -2309,6 +2340,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1625356476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625356472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686b7b149d1dd1419a94e5c9a506df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorer: 0
+  scored: 4
 --- !u!1 &1744678653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2683,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798745342}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &1833961543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,6 +2695,7 @@ GameObject:
   - component: {fileID: 1833961545}
   - component: {fileID: 1833961544}
   - component: {fileID: 1833961546}
+  - component: {fileID: 1833961547}
   m_Layer: 0
   m_Name: Player1Goal
   m_TagString: Untagged
@@ -2750,6 +2796,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1833961547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833961543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686b7b149d1dd1419a94e5c9a506df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorer: 0
+  scored: 1
 --- !u!1 &1949696666
 GameObject:
   m_ObjectHideFlags: 0

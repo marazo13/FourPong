@@ -26,6 +26,9 @@ public class Ball : MonoBehaviour
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        this.rb.velocity = new Vector2(this.speed * x, this.speed * y);
+        float divX = Random.Range(0, this.speed);
+        float divY = Random.Range(0, this.speed);
+        this.rb.velocity = new Vector2(x * divX, y * divY);
+        Debug.Log("Hola?? x: " + this.rb.velocity);
     }
 }
