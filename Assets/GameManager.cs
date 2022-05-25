@@ -46,8 +46,13 @@ public class GameManager : MonoBehaviour
     // Experimental
     public void PlayerScored(int scorer, int scored)
     {
-        PlayerScores[scorer]++;
-        PlayerScores[scored]--;
+        if (scorer == 0) {
+            OwnGoal(scored);
+            return;
+        } else {
+            PlayerScores[scorer]++;
+            if (PlayerScores[scored] > 0) PlayerScores[scored]--;
+        }
 
         GameObject ScorerBoard;
         switch (scorer)
@@ -91,36 +96,33 @@ public class GameManager : MonoBehaviour
 
         ScorerBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scorer + ": " + PlayerScores[scorer].ToString();
         ScoredBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scored + ": " + PlayerScores[scored].ToString();
-
-        // Player4ScoreBoard.GetComponent<TextMeshProUGUI>().text = "Player 4: " + Player4Score.ToString();
         ResetPosition();
     }
 
-    public void Player1Scored()
-    {
-        Player1Score++;
-        Player1ScoreBoard.GetComponent<TextMeshProUGUI>().text = "Player 1: " + Player1Score.ToString();
-        ResetPosition();
-    }
+    private void OwnGoal(int scored) {
+        if (PlayerScores[scored] > 0) PlayerScores[scored]--;
 
-    public void Player2Scored()
-    {
-        Player2Score++;
-        Player2ScoreBoard.GetComponent<TextMeshProUGUI>().text = "Player 2: " + Player2Score.ToString();
-        ResetPosition();
-    }
-
-    public void Player3Scored()
-    {
-        Player3Score++;
-        Player3ScoreBoard.GetComponent<TextMeshProUGUI>().text = "Player 3: " + Player3Score.ToString();
-        ResetPosition();
-    }
-
-    public void Player4Scored()
-    {
-        Player4Score++;
-        Player4ScoreBoard.GetComponent<TextMeshProUGUI>().text = "Player 4: " + Player4Score.ToString();
+        GameObject ScoredBoard;
+        switch (scored)
+        {
+            case 1:
+                ScoredBoard = Player1ScoreBoard;
+                break;
+            case 2:
+                ScoredBoard = Player2ScoreBoard;
+                break;
+            case 3:
+                ScoredBoard = Player3ScoreBoard;
+                break;
+            case 4:
+                ScoredBoard = Player4ScoreBoard;
+                break;            
+            default:
+                ScoredBoard = Player1ScoreBoard;
+                Debug.Log("Scored to who?????");
+                break;
+        }
+        ScoredBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scored + ": " + PlayerScores[scored].ToString();
         ResetPosition();
     }
 

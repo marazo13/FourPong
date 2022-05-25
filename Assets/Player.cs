@@ -49,4 +49,22 @@ public class Player : MonoBehaviour
         this.rb.velocity = Vector2.zero;
         transform.position = startPosition;
     }
+
+    // private void OnCollisionEnter2D(Collision2D collision) 
+    // {
+    //     Debug.Log(collision.gameObject);
+    //     if (collision.gameObject.CompareTag("Ball"))
+    //     {
+    //         Debug.Log("Ball Collided with " + this.gameObject.tag);
+    //     }
+    // }
+
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     Debug.Log(collision.gameObject);
+    //     if (collision.gameObject.CompareTag("Ball"))
+    //     {
+    //         Debug.Log("Ball Collided with " + this.gameObject.tag);
+    //     }
+    // }
 }

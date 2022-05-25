@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Player1Goal
+  - Player2Goal
+  - Player3Goal
+  - Player4Goal
+  - Player1
+  - Player2
+  - Player3
+  - Player4
   layers:
   - Default
   - TransparentFX
