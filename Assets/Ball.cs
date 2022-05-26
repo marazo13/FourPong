@@ -26,12 +26,9 @@ public class Ball : MonoBehaviour
     private void Launch()
     {
         this.lastHit = 0;
-        float x = Random.Range(0, 2) == 0 ? -1 : 1;
-        float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        float divX = Random.Range(0, this.speed);
-        float divY = Random.Range(0, this.speed);
-        this.rb.velocity = new Vector2(x * divX, y * divY);
-        Debug.Log("Ball Launch Velocity: " + this.rb.velocity);
+        float angle = Random.Range(0f, 2f * Mathf.PI);
+        Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        this.rb.velocity = direction * this.speed;
     } 
 
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -40,7 +37,6 @@ public class Ball : MonoBehaviour
     }   
 
     private int getLastHitPlayer (string tag) {
-        Debug.Log("Ball Collided with " + tag);
         switch (tag)
             {
                 case "Player1":

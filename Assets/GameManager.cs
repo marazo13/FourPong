@@ -24,26 +24,32 @@ public class GameManager : MonoBehaviour
     [Header("Player 4")]
     public GameObject player4;
     public GameObject player4Goal;
-
+    
     [Header("Score UI")]
-    public GameObject Player1ScoreBoard;
-    public GameObject Player2ScoreBoard;
-    public GameObject Player3ScoreBoard;
-    public GameObject Player4ScoreBoard;
+    public TMP_Text Player1ScoreBoard;
+    public TMP_Text Player2ScoreBoard;
+    public TMP_Text Player3ScoreBoard;
+    public TMP_Text Player4ScoreBoard;
 
+    private IDictionary<int, TMP_Text> PlayerScoreBoards;
 
-    private int Player1Score;
-    private int Player2Score;
-    private int Player3Score;
-    private int Player4Score;
-    IDictionary<int, int> PlayerScores = new Dictionary<int, int>(){
+    private IDictionary<int, int> PlayerScores = new Dictionary<int, int>(){
         {1,0},
         {2,0},
         {3,0},
         {4,0}
     };
 
-    // Experimental
+    void Start()
+    {
+        PlayerScoreBoards = new Dictionary<int, TMP_Text>(){
+            {1, Player1ScoreBoard},
+            {2, Player2ScoreBoard},
+            {3, Player3ScoreBoard},
+            {4, Player4ScoreBoard}
+        };
+    }
+
     public void PlayerScored(int scorer, int scored)
     {
         if (scorer == 0) {
@@ -54,75 +60,15 @@ public class GameManager : MonoBehaviour
             if (PlayerScores[scored] > 0) PlayerScores[scored]--;
         }
 
-        GameObject ScorerBoard;
-        switch (scorer)
-        {
-            case 1:
-                ScorerBoard = Player1ScoreBoard;
-                break;
-            case 2:
-                ScorerBoard = Player2ScoreBoard;
-                break;
-            case 3:
-                ScorerBoard = Player3ScoreBoard;
-                break;
-            case 4:
-                ScorerBoard = Player4ScoreBoard;
-                break;            
-            default:
-                ScorerBoard = Player1ScoreBoard;
-                break;
-        }
-
-        GameObject ScoredBoard;
-        switch (scored)
-        {
-            case 1:
-                ScoredBoard = Player1ScoreBoard;
-                break;
-            case 2:
-                ScoredBoard = Player2ScoreBoard;
-                break;
-            case 3:
-                ScoredBoard = Player3ScoreBoard;
-                break;
-            case 4:
-                ScoredBoard = Player4ScoreBoard;
-                break;            
-            default:
-                ScoredBoard = Player1ScoreBoard;
-                break;
-        }
-
-        ScorerBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scorer + ": " + PlayerScores[scorer].ToString();
-        ScoredBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scored + ": " + PlayerScores[scored].ToString();
+        PlayerScoreBoards[scorer].text = "Player " + scorer.ToString() + ": " + PlayerScores[scorer].ToString();
+        PlayerScoreBoards[scored].text = "Player " + scored.ToString() + ": " + PlayerScores[scored].ToString();
         ResetPosition();
     }
 
     private void OwnGoal(int scored) {
         if (PlayerScores[scored] > 0) PlayerScores[scored]--;
 
-        GameObject ScoredBoard;
-        switch (scored)
-        {
-            case 1:
-                ScoredBoard = Player1ScoreBoard;
-                break;
-            case 2:
-                ScoredBoard = Player2ScoreBoard;
-                break;
-            case 3:
-                ScoredBoard = Player3ScoreBoard;
-                break;
-            case 4:
-                ScoredBoard = Player4ScoreBoard;
-                break;            
-            default:
-                ScoredBoard = Player1ScoreBoard;
-                Debug.Log("Scored to who?????");
-                break;
-        }
-        ScoredBoard.GetComponent<TextMeshProUGUI>().text = "Player " + scored + ": " + PlayerScores[scored].ToString();
+        PlayerScoreBoards[scored].text = "Player " + scored + ": " + PlayerScores[scored].ToString();
         ResetPosition();
     }
 
