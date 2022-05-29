@@ -15,14 +15,21 @@ namespace Mirror.Examples.Pong
     {
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
+<<<<<<< Updated upstream
         public Transform upRacketSpawn;
         public Transform downRacketSpawn;
+=======
+>>>>>>> Stashed changes
         GameObject ball;
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
             // add player at correct spawn position
+<<<<<<< Updated upstream
             Transform start = numPlayers == 0 ? upRacketSpawn : downRacketSpawn;
+=======
+            Transform start = numPlayers == 0 ? leftRacketSpawn : rightRacketSpawn;
+>>>>>>> Stashed changes
             GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
             NetworkServer.AddPlayerForConnection(conn, player);
 
